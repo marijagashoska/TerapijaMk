@@ -1,0 +1,480 @@
+:root {
+    --dark-body: #4d4c5a;
+    --dark-main: #141529;
+    --dark-second: #79788c;
+    --dark-hover: #323048;
+    --dark-text: #f8fbff;
+
+    --light-body: #f3f8fe;
+    --light-main: #fdfdfd;
+    --light-second: #c3c2c8;
+    --light-hover: #edf0f5;
+    --light-text: #151426;
+
+    --blue: #0000ff;
+    --white: #fff;
+
+    --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+    --font-family: cursive;
+}
+
+.light {
+    --bg-body: var(--light-body);
+    --bg-main: var(--light-main);
+    --bg-second: var(--light-second);
+    --color-hover: var(--light-hover);
+    --color-txt: var(--light-text);
+}
+
+#left-side{
+    display:flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+}
+#right-side{
+    display:flex;
+    flex-direction: column;
+    padding: 50px 0;
+}
+#paired{
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+}
+#active{
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+#frame{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: var(--font-family);
+    background-color: var(--bg-body);
+}
+
+.calendar {
+    height: max-content;
+    width: max-content;
+    background-color: var(--bg-main);
+    border-radius: 30px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.light .calendar {
+    box-shadow: var(--shadow);
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 25px;
+    font-weight: 600;
+    color: var(--color-txt);
+    padding: 10px;
+
+}
+
+.calendar-body {
+    padding: 10px;
+}
+
+.calendar-week-day {
+    height: 50px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-weight: 600;
+}
+
+.calendar-week-day div {
+    display: grid;
+    place-items: center;
+    color: var(--bg-second);
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+    color: var(--color-txt);
+}
+
+.calendar-days div {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    position: relative;
+    cursor: pointer;
+    animation: to-top 1s forwards;
+}
+#frame > *:hover{
+    background-color:white;
+}
+
+.calendar-days div span {
+    position: absolute;
+}
+
+
+.calendar-days div span:nth-child(1),
+.calendar-days div span:nth-child(3) {
+    width: 2px;
+    height: 0;
+    background-color: var(--color-txt);
+}
+
+
+.calendar-days div span:nth-child(1) {
+    bottom: 0;
+    left: 0;
+}
+
+.calendar-days div span:nth-child(3) {
+    top: 0;
+    right: 0;
+}
+
+.calendar-days div span:nth-child(2),
+.calendar-days div span:nth-child(4) {
+    width: 0;
+    height: 2px;
+    background-color: var(--color-txt);
+}
+
+
+
+.calendar-days div span:nth-child(2) {
+    top: 0;
+    left: 0;
+}
+
+.calendar-days div span:nth-child(4) {
+    bottom: 0;
+    right: 0;
+}
+
+
+.curr-date{
+    background-color: var(--blue);
+    color: var(--white);
+    border-radius: 50%;
+}
+
+.calendar-days div.curr-date span {
+    display: none;
+}
+
+.month-picker {
+    padding: 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.month-picker:hover {
+    background-color: var(--color-hover);
+}
+
+.year-picker {
+    display: flex;
+    align-items: center;
+}
+
+.year-change {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.year-change:hover {
+    background-color: var(--color-hover);
+}
+
+
+.month-list {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--bg-main);
+    padding: 20px;
+    grid-template-columns: repeat(3, auto);
+    gap: 5px;
+    display: grid;
+    transform: scale(1.5);
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.month-list.show {
+    transform: scale(1);
+    visibility: visible;
+    pointer-events: visible;
+    transition: all 0.2s ease-in-out;
+}
+
+.month-list > div {
+    display: grid;
+    place-items: center;
+}
+
+.month-list > div > div {
+    width: 100%;
+    padding: 5px 20px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    color: var(--color-txt);
+}
+
+.month-list > div > div:hover {
+    background-color: var(--color-hover);
+}
+
+@keyframes to-top {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+select#timePicker {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    height: 30px;
+    width: 70px;
+    padding: 5px;
+    overflow: hidden;
+}
+
+select#timePicker option {
+    font-size: 14px;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    width: 300px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    margin: 15px 0;
+    box-sizing: border-box;
+}
+.buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#cancelBtn, #temporal-deletion, #delete-approval{
+    background-color: #ff6666;
+    color: white;
+    max-width: fit-content;
+}
+
+#approveBtn, #confirm-approval, #approve-carried-out{
+    background-color: #4CAF50;
+    color: white;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.appointment-section {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: 300px;
+    border-radius: 8px;
+}
+
+.appointment-section h2 {
+    text-align: center;
+    color: #333;
+}
+
+.appointment-section label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.appointment-section input, .appointment-section select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.appointment-section button , #add-Term{
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.appointment-section button:hover, #add-Term:hover {
+    background-color: #45a049;
+}
+
+
+#delete-all-free , #creation{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 300px;
+    background-color: #f9f9f9;
+}
+
+#creation > * {
+    padding-bottom: 10px;
+}
+#creation button, #delete-all-free input{
+    width: max-content;
+}
+
+
+#delete-all-free label,
+#delete-all-free input,
+#delete-all-free button {
+    display: block;
+    margin: 10px 0;
+}
+
+#authButton{
+    position: absolute;
+    left: 1145px;
+    top: 21px;
+    width: 150px;
+    color: white;
+    background-color: red;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+#delete-all-free button:hover {
+    background-color: #ff3333;
+}
+
+
+#content{
+    margin:50px;
+}
+
+table {
+    padding-top: 10px;
+    width: fit-content;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+
+thead > tr {
+    padding: 10px;
+    text-align: left;
+}
+
+tbody tr {
+    border-bottom: 1px solid #ddd;
+    background-color: lightgrey;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+td {
+    padding: 10px;
+}
+
+#request-assets, #appointment-assets
+{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+h3{
+    padding-top: 20px;
+}
+#summary{
+    margin-top: 20px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+#authButton{
+    position: absolute;
+    left: 1145px;
+    top: 21px;
+    width: 150px;
+}

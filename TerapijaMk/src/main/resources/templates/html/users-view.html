@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="/css/users-view.css">
+  <script src="/js/cookie.js" defer></script>
+</head>
+<body>
+<button id="authButton" style="display: none;"></button>
+<div id="frame">
+  <div id="header-part">
+    <h2>Листа со корисници</h2>
+    <div>
+      <label for="users-status">Статус на корисничка сметка:</label>
+      <select id="users-status">
+        <option value="defaultValue">Пребарај</option>
+        <option value="all">Сите корисници</option>
+        <option value="active">Активни корисници</option>
+        <option value="blocked">Блокирани корисници</option>
+      </select>
+    </div>
+    <div>
+      <label for="users-parameters">Кориснички параметри:</label>
+      <select id="users-parameters">
+        <option value="defaultValue">Пребарај</option>
+        <option value="name">Име</option>
+        <option value="surname">Презиме</option>
+        <option value="username">Корисничко име</option>
+        <option value="age">Возраст</option>
+      </select>
+    </div>
+    <div id="search-input-container">
+      <label for="search-input">Внесете пребарување:</label>
+      <input type="text" id="search-input" placeholder="Внеси...">
+      <button id="search-button">Пребарај</button>
+    </div>
+  </div>
+  <div id="main-part">
+    <table id="users-table">
+      <thead>
+      <tr>
+        <th>Корисничко име</th>
+        <th>Име</th>
+        <th>Презиме</th>
+        <th>Возраст</th>
+        <th>Телефонски број</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+</div>
+<script src="/js/users-view.js"></script>
+</body>
+</html>

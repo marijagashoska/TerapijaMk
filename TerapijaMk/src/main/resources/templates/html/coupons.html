@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .nastan-container {
+            display: flex;
+            flex-direction: column; /* Change to 'row' if you want the items in a row */
+            border: 1px solid #ccc; /* Optional: add a border to each item */
+            padding: 10px; /* Optional: add padding to each item */
+            margin-bottom: 10px; /* Optional: add space between items */
+        }
+    </style>
+    <script src="/js/cookie.js" defer></script>
+</head>
+<body>
+<button id="authButton" style="display: none;"></button>
+<table>
+
+    <div th:each="nastan : ${couponList}" class="nastan-container">
+        <div><strong>Naslov:</strong> <span th:text="${nastan.title}"></span></div>
+        <div><strong>Opis:</strong> <span th:text="${nastan.description}"></span></div>
+        <div><strong>Kod:</strong> <span th:text="${nastan.code}"></span></div>
+    </div>
+</table>
+
+</body>
+</html>

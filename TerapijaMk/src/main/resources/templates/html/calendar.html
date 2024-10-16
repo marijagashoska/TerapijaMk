@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Calendar
+    </title>
+    <script src="/js/cookie.js" defer></script>
+    <link rel="stylesheet" href="/css/calendar.css">
+</head>
+<body class="light">
+<button id="authButton" style="display: none;"></button>
+<div id="content">
+    <div id="personal-info">
+        <img id="admin-photo" src="/images/chicho-round.png">
+        <div id="first-box" class="white-space">
+            <a href="editUser.html"><img src="/images/down.png">Кориснички профил</a>
+            <a href="terms.html"><img src="/images/down.png">Мои термини</a>
+        </div>
+    </div>
+
+    <div id="appointment-info">
+        <div id="left-side">
+            <h1>Закажи го твојот термин!</h1>
+            <div id="sub"><img src="/images/clock.png"><a>1h времетраење на третман</a></div>
+            <div id="calendar-main">
+                <div class="calendar">
+                    <div class="calendar-header">
+                        <span class="month-picker" id="month-picker">August</span>
+                        <div class="year-picker">
+                            <span class="year-change" id="prev-year">
+                                <pre><</pre>
+                            </span>
+                            <span id="year">2024</span>
+                            <span class="year-change" id="next-year">
+                                <pre>></pre>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="calendar-body">
+                        <div class="calendar-week-day">
+                            <div>Sun</div>
+                            <div>Mon</div>
+                            <div>Tue</div>
+                            <div>Wed</div>
+                            <div>Thu</div>
+                            <div>Fri</div>
+                            <div>Sat</div>
+                        </div>
+                        <div class="calendar-days"></div>
+                    </div>
+                    <div class="month-list"></div>
+                </div>
+            </div>
+        </div>
+        <div id="right-side">
+            <div>
+                <label>Код на купон:</label>
+                <select id="coupon-type">
+                    <option></option>
+                </select>
+            </div>
+            <div>
+                <label>Медицинска состојба:</label> <input id="medical-condition" type="text">
+            </div>
+            <div id="hourly-terms"></div>
+            <button id="book-button" disabled>Закажи</button>
+        </div>
+    </div>
+</div>
+<div id="confirmation-modal" class="modal">
+    <div class="modal-content">
+        <p>Дали ја потврдувате резервацијата?</p>
+        <div id="last-check"></div>
+        <button id="confirm-booking">Потврди</button>
+        <button id="cancel-booking">Откажи</button>
+    </div>
+</div>
+<script src="/js/calendar.js"></script>
+</body>
+
+</html>

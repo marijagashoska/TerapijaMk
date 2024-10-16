@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    Calendar
+  </title>
+  <script src="/js/cookie.js" defer></script>
+  <link rel="stylesheet" href="/css/admin-terms.css">
+</head>
+<body class="light">
+<button id="authButton" style="display: none;"></button>
+<div id="content">
+  <h1>Преглед и менаџирање со термини</h1>
+  <h3>Со клик врз датумот од календарот добивате преглед за термините</h3>
+  <div id="left-side">
+    <div id="calendar-main">
+      <div class="calendar">
+        <div class="calendar-header">
+          <span class="month-picker" id="month-picker">August</span>
+          <div class="year-picker">
+                            <span class="year-change" id="prev-year">
+                                <pre><</pre>
+                            </span>
+            <span id="year">2024</span>
+            <span class="year-change" id="next-year">
+                                <pre>></pre>
+                            </span>
+          </div>
+        </div>
+        <div class="calendar-body">
+          <div class="calendar-week-day">
+            <div>Sun</div>
+            <div>Mon</div>
+            <div>Tue</div>
+            <div>Wed</div>
+            <div>Thu</div>
+            <div>Fri</div>
+            <div>Sat</div>
+          </div>
+          <div class="calendar-days"></div>
+        </div>
+        <div class="month-list"></div>
+      </div>
+    </div>
+    <div id="paired">
+      <div id="creation">
+        <h3>Креирање поединечен термин</h3>
+        <p>*клик врз ден од календарот</p>
+        <div>
+          <label>Избери време: </label>
+          <select id="timePicker">
+            <option></option>
+          </select>
+        </div>
+        <button id="add-Term">Додади</button>
+      </div>
+      <div id="delete-all-free">
+        <label>Изберете датум за бришење на термини(слободни):</label>
+        <input type="date" id="delete-date-from" name="delete-date">
+        <input type="date" id="delete-date-to" name="delete-date">
+        <button id="delete-free-button">Избриши термини</button>
+      </div>
+    </div>
+    <div class="appointment-section">
+      <h2>Автоматско креирање термини</h2>
+      <label for="start-date">Од датум:</label>
+      <input type="date" id="start-date" name="start-date">
+      <label for="end-date">До датум:</label>
+      <input type="date" id="end-date" name="end-date">
+      <label for="start-time">Од време:</label>
+      <select id="start-time">
+        <option></option>
+      </select>
+      <label for="end-time">До време:</label>
+      <select id="end-time">
+        <option></option>
+      </select>
+      <label for="time-interval">Слободен простор меѓу термини (во минути):</label>
+      <input type="number" id="time-interval" name="time-interval" min="0" step="5">
+      <button id="create-appointments">Креирај слободни термини</button>
+    </div>
+  </div>
+  <div id="right-side">
+    <div id="active">
+      <h3>Тековни термини за ден <span id="insert-date"></span></h3> <p>(доколку постои термин, со клик врз време, се добиваат информации и овозоможува менаџирање со термин)</p>
+      <div id="frame"></div>
+      <button id="temporal-deletion" style="display: none;">Целосно бришење термин</button>
+    </div>
+    <div id="summary" style="display: none;">
+      <table id="requested-table" style="display: none;">
+        <thead><tr><th>Предложени</th></tr></thead><tbody id="requested"></tbody>
+      </table>
+      <table id="approved-table" style="display: none;">
+        <thead><tr><th>Одобрени</th></tr></thead><tbody id="approved"></tbody>
+      </table>
+      <div id="request-assets" style="display: none;">
+        <label>Одобрен корисник:</label>
+        <input id="username-approval" type="text">
+        <button id="confirm-approval">Потврди</button>
+      </div>
+      <div id="appointment-assets" style="display: none;">
+        <button id="delete-approval">Бриши резервација на термин</button>
+        <button id="approve-carried-out">Потврди одржан термин</button>
+      </div>
+      <div id="popupModal" class="modal" style="display: none;">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Enter Your Details</h2>
+          <input type="text" id="userInput" placeholder="Enter something...">
+          <div class="buttons">
+            <button id="cancelBtn">Cancel</button>
+            <button id="approveBtn">Approve</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="module" src="/js/admin-terms.js"></script>
+</body>
+</html>

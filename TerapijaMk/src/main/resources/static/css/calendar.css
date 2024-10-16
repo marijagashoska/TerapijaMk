@@ -1,0 +1,389 @@
+#confirmation-modal {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    left: 38%;
+    top: 40%;
+    width: 400px;
+    overflow: auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+.model-content{
+    display: flex;
+    align-items: center;
+}
+
+.modal-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+button {
+    background-color: #3498db;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+button:active {
+    background-color: #1f77e4;
+}
+
+#cancel-booking {
+    background-color: #e74c3c;
+}
+
+#cancel-booking:hover {
+    background-color: #c0392b;
+}
+
+:root {
+    --dark-body: #4d4c5a;
+    --dark-main: #141529;
+    --dark-second: #79788c;
+    --dark-hover: #323048;
+    --dark-text: #f8fbff;
+
+    --light-body: #f3f8fe;
+    --light-main: #fdfdfd;
+    --light-second: #c3c2c8;
+    --light-hover: #edf0f5;
+    --light-text: #151426;
+
+    --blue: #0000ff;
+    --white: #fff;
+
+    --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+    --font-family: cursive;
+}
+
+
+#content{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    width: 100%;
+    height:100%;
+    align-items: center;
+}
+.white-space{
+    background-color: white;
+}
+#personal-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+#appointment-info{
+    padding: 30px;
+    background-color: white;
+    display:flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+}
+#admin-photo{
+    width:280px;
+    z-index: -1;
+}
+#first-box a {
+    font-size: 20px;
+    padding:15px;
+    display: inline-block;
+}
+
+a img{
+    transform: rotate(-90deg);
+    height: 20px;
+    margin-right: 10px;
+}
+#right-side > *{
+    margin:10px;
+}
+#right-side{
+    position: relative;
+    top: 50px;
+    padding: 16px;
+}
+#hourly-terms{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+#right-side > *{
+    margin-bottom: 5px;
+}
+
+.dark {
+    --bg-body: var(--dark-body);
+    --bg-main: var(--dark-main);
+    --bg-second: var(--dark-second);
+    --color-hover: var(--dark-hover);
+    --color-txt: var(--dark-text);
+}
+#first-box{
+    width: 350px;
+}
+.light {
+    --bg-body: var(--light-body);
+    --bg-main: var(--light-main);
+    --bg-second: var(--light-second);
+    --color-hover: var(--light-hover);
+    --color-txt: var(--light-text);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+label{
+    display: inline-block;
+    width: 180px;
+}
+
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-family: var(--font-family);
+    background-color: var(--bg-body);
+}
+h1{
+    font-size: 25px;
+}
+#left-side > *{
+    margin-bottom: 15px;
+}
+#sub{
+    border: 2px solid #10B981;
+    background-color: rgba(16, 185, 129, 0.05);
+    display: inline-block;
+    padding: 10px;
+}
+.calendar {
+    height: max-content;
+    width: max-content;
+    background-color: var(--bg-main);
+    border-radius: 30px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.light .calendar {
+    box-shadow: var(--shadow);
+}
+#sub img{
+    height: 20px;
+    padding-right:15px;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 25px;
+    font-weight: 600;
+    color: var(--color-txt);
+    padding: 10px;
+
+}
+
+.calendar-body {
+    padding: 10px;
+}
+
+.calendar-week-day {
+    height: 50px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-weight: 600;
+}
+
+.calendar-week-day div {
+    display: grid;
+    place-items: center;
+    color: var(--bg-second);
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+    color: var(--color-txt);
+}
+
+.calendar-days div {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    position: relative;
+    cursor: pointer;
+    animation: to-top 1s forwards;
+}
+
+.calendar-days div span {
+    position: absolute;
+}
+
+
+.calendar-days div span:nth-child(1),
+.calendar-days div span:nth-child(3) {
+    width: 2px;
+    height: 0;
+    background-color: var(--color-txt);
+}
+
+.calendar-days div span:nth-child(1) {
+    bottom: 0;
+    left: 0;
+}
+
+.calendar-days div span:nth-child(3) {
+    top: 0;
+    right: 0;
+}
+
+.calendar-days div span:nth-child(2),
+.calendar-days div span:nth-child(4) {
+    width: 0;
+    height: 2px;
+    background-color: var(--color-txt);
+}
+
+
+.calendar-days div span:nth-child(2) {
+    top: 0;
+    left: 0;
+}
+
+.calendar-days div span:nth-child(4) {
+    bottom: 0;
+    right: 0;
+}
+
+.curr-date{
+    background-color: var(--blue);
+    color: var(--white);
+    border-radius: 50%;
+}
+
+.calendar-days div.curr-date span {
+    display: none;
+}
+
+.month-picker {
+    padding: 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.month-picker:hover {
+    background-color: var(--color-hover);
+}
+
+.year-picker {
+    display: flex;
+    align-items: center;
+}
+
+.year-change {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.year-change:hover {
+    background-color: var(--color-hover);
+}
+
+
+.month-list {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--bg-main);
+    padding: 20px;
+    grid-template-columns: repeat(3, auto);
+    gap: 5px;
+    display: grid;
+    transform: scale(1.5);
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.month-list.show {
+    transform: scale(1);
+    visibility: visible;
+    pointer-events: visible;
+    transition: all 0.2s ease-in-out;
+}
+
+.month-list > div {
+    display: grid;
+    place-items: center;
+}
+
+.month-list > div > div {
+    width: 100%;
+    padding: 5px 20px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    color: var(--color-txt);
+}
+
+.month-list > div > div:hover {
+    background-color: var(--color-hover);
+}
+
+@keyframes to-top {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+#authButton{
+    position: absolute;
+    left: 1145px;
+    top: 21px;
+    width: 150px;
+    color: white;
+    background-color: red;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+
+

@@ -1,0 +1,407 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+header {
+    background-color: white;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    padding: 60px 40px;
+}
+.menu{
+    display: flex;
+    align-items: center;
+    width:100%;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+}
+.logo img {
+    height: 80px;
+}
+
+.logo span {
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 20px;
+    color: #E40046;
+}
+
+nav{
+    width:100%;
+    flex:1;
+    font-family: "Kumbh Sans", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 25px;
+}
+.title, .footer-left span{
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 50px;
+    color: #454545;
+    position: relative;
+    z-index: 2;
+    right: -60px;
+}
+
+nav ul {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    list-style: none;
+}
+.icon-down{
+    height:20px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 100%;
+}
+.icon-search{
+    height:40px;
+}
+
+form > input{
+    height:40px;
+    width: 150px;
+}
+form{
+    display:flex;
+    justify-content: center;
+}
+::placeholder {
+    font-size: 17px;
+    padding-left: 5px;
+}
+.main-content{
+    display: grid;
+    grid-template-columns: 3fr 1fr 3fr;
+    align-items: center;
+    justify-content: center;
+    height: 350px;
+    background-color: #F7F7F5;
+}
+.main-image{
+    height: 250px;
+    position: relative;
+    z-index: 1;
+}
+.items-register{
+    font-family: "Kumbh Sans", sans-serif;
+    position: absolute;
+    left: 900px;
+}
+.items-register p{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 18px ;
+    padding: 10px;
+    text-align: center;
+}
+
+.form-imp{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    padding: 10px;
+}
+input , button {
+    border-radius: 5px;
+    padding: 7px;
+    border: 1px solid #9D9D9D;
+}
+button{
+    background-color: #10B981;
+    color:white;
+}
+#personalised{
+    font-size: xx-large;
+    font-family: "Caveat", cursive;
+}
+.white-part{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 415px;
+    border-radius: 5px;
+    padding: 20px;
+}
+a {
+    text-decoration: none;
+}
+.logged-in{
+    padding: 20px;
+    font-family: "Kumbh Sans", sans-serif;
+}
+.split-title{
+    display: block;
+    padding-left: 80px;
+}
+.part-1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    gap: 80px;
+}
+
+.part1-text{
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 23px;
+    width: 500px;
+}
+.puzzle{
+    height: 300px;
+}
+.part1-text *{
+    padding: 10px;
+}
+.part2{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    height: 550px;
+    align-items: center;
+    background-color: #F7F7F5;
+}
+.part2 > div{
+    flex:1;
+    display: flex;
+    justify-content: center;
+}
+.part2 > div:first-child {
+    justify-content: flex-end;
+}
+
+.part2-content{
+    width: 500px;
+    font-family: "Kumbh Sans", sans-serif;
+}
+.slika-chicho, .part2-content {
+    height:350px;
+    border-radius: 5px;
+}
+.head1, .head2{
+    font-family: "Kumbh Sans", sans-serif;
+    font-weight: bold;
+    display: block;
+}
+
+.head2{
+    font-size: 19px;
+}
+.head1{
+    font-size: 25px;
+    padding-bottom: 20px;
+}
+footer{
+    background-color: rgba(206, 228, 237, 0.97);
+}
+.text-button{
+    background-color: transparent;
+    color: darkgreen;
+    border: 2px solid darkgreen;
+    border-radius: 12px;
+    font-weight: bold;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: "Kumbh Sans", sans-serif;
+    font-size: 16px;
+}
+
+.text-button:hover {
+    background-color: darkgreen;
+    color: white;
+}
+.footer-content{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 80px;
+    padding-top: 50px;
+    justify-content: center;
+    height: 400px;
+}
+.icons li img {
+    height: 50px;
+    border:2px solid black;
+    border-radius: 50%;
+    padding: 10px;
+}
+.icons li{
+    padding: 10px;
+}
+.icons li img:hover {
+    background-color: white;
+    border-color: darkslategrey;
+}
+.footer-left p img{
+    height: 30px;
+    padding: 0;
+    margin: 0;
+}
+.icons{
+    list-style-type: none;
+    display: flex;
+    width: 200px;
+    justify-content: center;
+    padding: 0;
+    margin: 0 auto;
+
+}
+.footer-left *{
+    padding-bottom: 5px;
+}
+.footer-left{
+    text-align: center;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: auto;
+    padding: 25px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    font-family: "Kumbh Sans", sans-serif;
+}
+
+.popup .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+#submit-btn{
+    width: 120px;
+    background-color: #10B981;
+}
+#loginForm > div > h2{
+    text-align: center;
+}
+
+.popup-content {
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.popup-content h2 {
+    margin-bottom: 20px;
+}
+
+.popup-content label {
+    display: block;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.popup-content input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.popup-content button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.popup-content button:hover {
+    background-color: #0056b3;
+}
+body.no-scroll {
+    overflow: hidden;
+}
+.dataForms{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+
+}
+#links{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: darkgreen;
+}
+.logged-in{
+    position: absolute;
+    left: 900px;
+    padding: 30px;
+}
+a img{
+    transform: rotate(-90deg);
+    height: 20px;
+    margin-right: 10px;
+}
+#signInForm{
+    height: 500px;
+    width: 700px;
+}
+#signInForm > div > form{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+}
+#authButton{
+    position: absolute;
+    left: 1145px;
+    top: 21px;
+    width: 150px;
+    color: white;
+    background-color: red;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+#create{
+    width: 200px;
+    padding: 15px;
+    background-color: #10B981;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 20px;
+}

@@ -1,0 +1,1 @@
+docker run -d --name terapijaMk -e POSTGRES_USER=terapija -e POSTGRES_PASSWORD=terapija123! -e POSTGRES_DB=terapija -p 5432:5432 postgres

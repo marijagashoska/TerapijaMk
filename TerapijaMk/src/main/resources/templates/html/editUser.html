@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/editUser.css">
+    <script src="/js/cookie.js" defer></script>
+</head>
+<body>
+<button id="authButton" style="display: none;"></button>
+<h2>Информации за корисникот</h2>
+<div id="content">
+    <div id="main-part">
+            <div id="container">
+                <div id="left-side">
+                    <div>
+                        <p>Корисничко име</p>
+                        <input type="text" name="username" id="usernameSignIn"/>
+                    </div>
+                    <div>
+                        <p>Име</p>
+                        <input type="text" id="name" name="firstName"/>
+                    </div>
+                    <div>
+                        <p>Презиме</p>
+                        <input type="text" id="surname" name="lastName"/>
+                    </div>
+                    <div>
+                        <p>Година на раѓање</p>
+                        <input type="date" id="age" name="age"/>
+                    </div>
+                </div>
+                <div id="right-side">
+                    <div>
+                        <p>Телефон</p>
+                        <input type="tel" id="phone" placeholder="07_-___-___" name="phone"/>
+                    </div>
+                    <button id="block-account" style="display: none;">Блокирај к.сметка</button>
+                    <button id="edit-profile">Измени профил</button>
+                    <button id="saveChanges">Зачувај</button>
+                </div>
+            </div>
+        <div id="adminInfo-block" style="display: none;">
+            <table id="stat-table">
+                <thead>
+                <tr>
+                    <th>Состојба на термин</th>
+                    <th>Број</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Одржани термини</td>
+                    <td><span id="carried-out"></span></td>
+                </tr>
+                <tr>
+                    <td>Одбиени предлози</td>
+                    <td><span id="rejected"></span></td>
+                </tr>
+                <tr>
+                    <td>Откажани предлози</td>
+                    <td><span id="cancelledReqByUser"></span></td>
+                </tr>
+                <tr>
+                    <td>Откажани термини(корисник)</td>
+                    <td><span id="cancelledAppByUser"></span></td>
+                </tr>
+                <tr>
+                    <td>Откажани термини(админ)</td>
+                    <td><span id="cancelledAppByAdmin"></span></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div id="table-part">
+        <p>Информации за термини на корисникот</p>
+        <select id="statusDropdown">
+            <option value=""></option>
+            <option value="requests" id="requests">Предложени термини</option>
+            <option value="appointments" id="appointments">Прифатени термини</option>
+            <option value="not-completed" id="not-completed">Неодржани термини</option>
+            <option value="completed" id="completed">Одржени термини</option>
+        </select>
+        <table id="additional-table">
+            <thead id="active-tableHead"></thead>
+            <tbody id="active-table"></tbody>
+        </table>
+    </div>
+</div>
+
+<div id="popupModal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Enter Your Details</h2>
+        <input type="text" id="userInput" required>
+        <div class="buttons">
+            <button id="cancelBtn">Cancel</button>
+            <button id="approveBtn">Approve</button>
+        </div>
+    </div>
+</div>
+
+<script type="module" src="/js/editUser.js"></script>
+</body>
+</html>

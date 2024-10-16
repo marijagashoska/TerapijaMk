@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:t="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Kumbh+Sans:wght@100..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Dancing+Script:wght@400..700&family=Kumbh+Sans:wght@100..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/index.css">
+  <script src="/js/cookie.js" defer></script>
+</head>
+<body>
+<header>
+  <div class="menu">
+    <div class="logo">
+      <!--        slikata i imeto-->
+      <img src="/images/viber_image_2024-07-30_21-57-13-658.png" alt="Logo">
+      <span>Јумеихо терапија</span>
+    </div>
+    <nav>
+      <ul class="items-info">
+        <li>
+          <span>Нашата нега</span>
+          <img class="icon-down" src="/images/down.png">
+          <div class="dropdown-content">
+            <p>Како изгледа еден јумеихо третман</p>
+            <p>Повеќе за третманот</p>
+            <p>Вашиот терапевт</p>
+          </div>
+        </li>
+        <li>
+          <span>Понуди и новости</span>
+          <img  class="icon-down" src="/images/down.png">
+        </li>
+        <li>
+          <span>Корисни информации</span>
+          <img class="icon-down" src="/images/down.png">
+          <div class="dropdown-content">
+            <p>Најчесто поставувани прашања</p>
+            <p>Контакт и локација</p>
+            <p>Искуства</p>
+          </div>
+        </li>
+        <li>
+          <form action="/search" method="get" class="search-form">
+            <input type="text" name="query" placeholder="Search" class="search-input">
+            <img class="icon-search" src="/images/search.png"/>
+          </form>
+        </li>
+      </ul>
+
+    </nav>
+  </div>
+  <button id="authButton" style="display: none;"></button>
+</header>
+<div class="main-content">
+  <div class="title">Енергијата зборува <span class="split-title">погласно од зборовите...</span></div>
+  <img class="main-image" src="/images/heart.png"/>
+
+  <div id="adminSection" class="items-register">
+    <div class="white-part">
+      <p>Сакате да закажете термин за терапија?</p>
+      <div class="form-imp">
+        <span> Имате активна корисничка сметка?</span><br>
+        <button id="loginBtn" class="form-button">Логирање</button>
+      </div>
+      <div class="form-imp">
+        <span>Во спротивно потребно е истата да ја креирате</span><br>
+        <button id="signInBtn" class="form-button">Креирање сметка</button>
+      </div>
+    </div>
+  </div>
+  <div id="userSection" class="logged-in" style="display: none;" >
+    <div class="white-part">
+      <p id="personalised"></p>
+      <div id="links">
+      <a href="calendar.html"><img src="/images/down.png">Закажи термин</a>
+      <a href="terms.html"><img src="/images/down.png"> Мои термини</a>
+      <a href="editUser.html"><img src="/images/down.png"> Кориснички профил</a>
+      <a href="userInfo.html"><img src="/images/down.png"> Новости и купони</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="part-1">
+  <div class="image-container">
+    <img class="puzzle" src="/images/viber_image_2024-08-02_16-45-10-968.png"/>
+  </div>
+  <div class="part1-text">
+    <ul>Јумеихо е мануелна терапија и се состои од три методи:
+      <li>Обработка на меки ткива(мускули)</li>
+      <li>Корекција(местење) на 'рбет и периферни зглобови</li>
+      <li>Акупресура(шијатсу) и истегања</li>
+    </ul>
+    Терапијата се спроведува во времетраење од 1 час и го опфаќа целото тело. Преку третманот темелно се пронаоѓа и отстранува  причинителот на несаканата состојба со цел да не дојде до повторна болка.
+  </div>
+</div>
+<div class="part2">
+  <div>
+    <div class="part2-content">
+      <span class="head1">Заздравувањето започнува кај нас</span>
+      <span class="head2">Вистински одговори и прецизност уште од првиот третман</span>
+      <div class="content">
+        Јумеихо терапија е метод на подигнување на виталната енергија преку нормализирање на колковите,
+        комбинација од мудроста на јапонската и кинеската медицина со јапонска прецизност.
+      </div><br>
+      <span class="head2">Главна цел </span>
+      <div class="content">
+        Мобилизирање на самоисцелувачките сили во организмот преку поставување на ‘рбетниот столб, карлицата и сите зглобови во правилна положба.
+      </div><br>
+      <button class="text-button"> Зошто да изберете Јумеихо третман</button>
+    </div>
+  </div>
+  <div>
+    <img class="slika-chicho" src="/images/Screenshot%20(847).png"/>
+  </div>
+</div>
+
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-left">
+      <span> Контактирајте нè!</span><br>
+      <span>Секогаш сме тука ви ја пружиме потребната нега. </span>
+      <p><img src="/images/telephone.png">+389 78 475 721</p>
+
+      <p><img src="/images/maps-and-flags.png">Булевар Илинден 160, Карпош (Влез 1, кат 4, стан 36)</p>
+
+      <ul class="icons">
+        <li><img src="/images/video.png"/></li>
+        <li><img src="/images/facebook.png"/></li>
+        <li><img src="/images/email.png"/></li>
+      </ul>
+    </div>
+    <div class="footer-right">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2109.8616021170824!2d21.392377633081306!3d42.0079182517295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135415d3afca10ed%3A0x9ea75bb8258c9bbb!2z0JHRg9C70LXQstCw0YAg0JjQu9C40L3QtNC10L0gMTYwLCDQodC60L7Qv9GY0LUgMTAwMA!5e0!3m2!1smk!2smk!4v1722853226192!5m2!1smk!2smk" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+  </div>
+
+  <div id="loginForm" class="popup">
+    <div class="popup-content">
+      <span class="close-btn" id="closeBtn">&times;</span>
+      <h2>Логирање</h2>
+      <form class="dataForms" method="post">
+        <label for="username">Корисничко име:</label>
+        <input type="text" id="username" name="username" required>
+        <label for="password">Лозинка:</label>
+        <input type="password" id="password" name="password" required>
+        <button id="submit-btn" type="submit">Логирање</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="signInForm" class="popup">
+    <div class="popup-content">
+      <span class="close-btn" id="closeSignInBtn">&times;</span>
+      <h2>Креирајте корисничка сметка</h2>
+      <form class="dataForms" method="post">
+        <div>
+          <label for="name">Име:</label>
+          <input type="name" id="name" name="name" required>
+        </div>
+        <div>
+          <label for="surname">Презиме:</label>
+          <input type="surname" id="surname" name="surname" required>
+        </div>
+        <div>
+          <label for="phone">Телефон:</label>
+          <input type="tel" id="phone" name="phone" placeholder="07_-___-___" required>
+        </div>
+        <div>
+          <label for="age">Датум на раѓање:</label>
+          <input type="date" id="age" name="age" required>
+        </div>
+        <div>
+          <label for="usernameSignIn">Корисничко име:</label>
+          <input type="username" id="usernameSignIn" name="username" required>
+        </div>
+        <div>
+          <label for="passwordSignIn">Лозинка:</label>
+          <input type="password" id="passwordSignIn" name="password" required>
+        </div>
+      </form>
+      <button id="create" type="submit">Креирај</button>
+    </div>
+  </div>
+</footer>
+<script type="module" src="/js/index.js"></script>
+</body>
+</html>

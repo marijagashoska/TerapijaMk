@@ -1,0 +1,41 @@
+body{
+    font-family: "Caveat", cursive;
+    background-color: aliceblue;
+}
+#box{
+    display: flex;
+    margin: 20px;
+    gap: 20px;
+}
+#coupons-frame, #news-frame{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+.new-item{
+display: flex;
+flex-direction: column;
+width: 260px;
+align-items: center;
+justify-content: center;
+margin: 0 15px 10px 0;
+padding: 20px;
+border: 1px solid #ddd;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+background-color: white;
+}
+h2{
+   display: flex;
+    justify-content: center;
+}
+#authButton{
+    position: absolute;
+    left: 1145px;
+    top: 21px;
+    width: 150px;
+    color: white;
+    background-color: red;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}

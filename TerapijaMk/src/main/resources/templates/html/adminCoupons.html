@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="/js/cookie.js" defer></script>
+  <link rel="stylesheet" href="/css/adminNews.css">
+</head>
+<body data-page="coupons">
+<button id="authButton" style="display: none;"></button>
+<h2>Купони...</h2>
+<div class="coupons-container">
+  <div class="add-coupons" onclick="showForm()">+</div>
+  <div id="coupons-list">
+  </div>
+</div>
+
+<div id="coupons-form" class="coupons-container" style="display: none;">
+  <form id="form">
+    <div id="title-part">
+      <label for="title">Наслов: </label>
+      <input type="text" id="title" required>
+    </div>
+    <div id="code-part">
+      <label for="code">Код: </label>
+      <input type="text" id="code">
+    </div>
+    <div id="description-part">
+      <label for="description">Опис: </label>
+      <textarea id="description" required></textarea>
+    </div>
+    <button type="button" onclick="submitForm()">Submit</button>
+    <button type="button" onclick="hideForm()">Cancel</button>
+  </form>
+</div>
+
+<script src="/js/adminNewsCoupons.js"></script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+:root {
+    --font-family: cursive;
+}
+body{
+    font-family: var(--font-family);
+    background-color: #f3f8fe;
+}
+
+#header{
+    display: flex;
+    justify-content: space-between;
+}
+#menu{
+    display: flex;
+    gap: 10px;
+}
+#menu *{
+    padding: 10px;
+    background-color: #17a2b8;
+    border: 0;
+    border-radius: 5px;
+    color: white;
+}
+table td,
+table th {
+    padding: 10px;
+}
+
+
+#popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#dialogPopUp {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+.btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+table{
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: max-content;
+}
+
+th, td {
+    width: fit-content;
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 12px;
+}
+
+th {
+    background-color: lightslategray;
+    color: #fff;
+
+}
+#frame{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+#requestsTableBody{
+    background-color: #eeeded;
+}
+#authButton{
+    position: absolute;
+    left: 1145px;
+    top: 21px;
+    width: 150px;
+    color: white;
+    background-color: red;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}

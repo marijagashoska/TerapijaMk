@@ -10,7 +10,7 @@
 ## Имплементација на дел од случаи на употреба 
 
 - **Преглед на распоред со термини**  
-  ![images/prva]
+  ![images/prva](https://github.com/marijagashoska/TerapijaMk/blob/master/images/prva.png)
 
 - **Закажување термин**  
   Се прикажува порака "PRESS ANY KEY TO START".  

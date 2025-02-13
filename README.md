@@ -10,7 +10,7 @@
 ## Имплементација на дел од случаи на употреба 
 
 - **Преглед на распоред со термини**  
-  ![mode](https://github.com/marijagashoska/Snake-Game/blob/main/mode.png)
+  ![images/prva]
 
 - **Закажување термин**  
   Се прикажува порака "PRESS ANY KEY TO START".  
